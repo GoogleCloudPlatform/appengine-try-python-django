@@ -7,7 +7,7 @@ from . import views
 
 class HomeViewTest(TestCase):
     def test_home(self):
-        requst = http.HttpRequest()
+        request = http.HttpRequest()
         response = views.home(request)
         self.assertEqual(200, response.status_code)
         self.assertIn('Hello World!', response.content)
