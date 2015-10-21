@@ -1,7 +1,7 @@
-## Python Flask Skeleton for Google App Engine
+## Python Django Skeleton for Google App Engine
 
 A skeleton for building Python applications on Google App Engine with the
-[Flask micro framework](http://flask.pocoo.org) using 
+[Django Web Framework](https://www.djangoproject.com/) using 
 [Cloud SQL](https://cloud.google.com/sql/docs/introduction).
 
 See our other [Google Cloud Platform github
