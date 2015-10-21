@@ -15,7 +15,7 @@ if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/bill-bigquery:polls',
+            'HOST': '/cloudsql/<your-cloud-project-id>:<your-database-name>',
             'NAME': 'polls',
             'USER': 'root',
         }
@@ -24,10 +24,10 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'polls',
-            'USER': 'django_user',
-            'PASSWORD': 'django',
-            'HOST': '173.194.104.255',
+            'NAME': '<your-database-name>',
+            'USER': '<your-database-user>',
+            'PASSWORD': '<your-database-password>',
+            'HOST': '<your-database-ip-address>',
             'PORT': '3306',
         }
     }

@@ -51,13 +51,14 @@ See the README file for directions. You'll need python 2.7 and [pip 1.4 or later
 1. Create a new CloudSQL instance. 
     * From the [Google Cloud Console](http://console.developer.google.com), go to Storage > CloudSQL> Create Instance
     * Under Acces Control > IP Address > Request IPv4 Address. This address will be your HOST for remote access to the 
-      CloudSQL instance in settings.py.
-    * Under Databaeses, click New database and create the name for your database in settings.py
+      CloudSQL instance in mysite/settings.py, so replace <your-database-ip> with this address.
+    * Under Databaeses, click New database and create the name for your database in mysite/settings.py. Replace
+      <your-database-name> with this value.
     * Under Access Control > Authorization > Allowed Networks, click Add item, and add Network 0.0.0.0/0. This opens up
       access to your CloudSQL instance from any network. Stricter firewall settings should be considered for production
       applications.
     * Under Access Control > Users > Create user account. Create a username and password and edit settings.py DATABASES
-      to reflect this. 
+      to reflect this. Replace <your-database-user> and <your-database-password> with these variables.
 
 Note in myproject/settings.py, the deployed app does not use the above settings, but instead talks to the instance through a Unix
 socket as root. When testing locally, use the settings created above to access the database.
@@ -88,6 +89,8 @@ To deploy the application:
    ```
    django-admin startproject mysite
    ```
+1. Verify that <your-cloud-project-id> and <your-databas-name> have been replaced in mysite/settings.py
+   with your Cloud Project ID and your database name respectively.
 1. [Deploy the
    application](https://developers.google.com/appengine/docs/python/tools/uploadinganapp) with
 
